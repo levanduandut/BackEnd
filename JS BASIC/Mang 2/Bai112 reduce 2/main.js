@@ -1,14 +1,3 @@
-/**
- * Methods
- *    forEach
- *    every
- *    some
- *    find
- *    filter
- *    map
- *    reduce
- */
-
 var courses = [
     {
         id: 1,
@@ -42,11 +31,6 @@ var courses = [
     }
 ]
 
-// var titleCoin = 0;
-// for (var course of courses){
-//     titleCoin += course.coin;
-// }
-// console.log(titleCoin);
 var i = 1;
 function Test(acc,curValue,curIndex,oring){ 
     i++;
