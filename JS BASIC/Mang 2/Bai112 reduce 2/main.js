@@ -30,13 +30,62 @@ var courses = [
         coin: 310
     }
 ]
+// var i =0;
 
-var i = 1;
-function Test(acc,curValue,curIndex,oring){ 
-    i++;
-    console.table({
-        'table':i,
-        'Bien tich tru': acc,
-    })
-}
-var red = courses.reduce(Test,0);
+// var totalcoin = courses.reduce(function(total,course){
+//     i++;
+//     // console.log(i, total, course);
+//     return total + course.coin;
+// },0); // intial value
+// console.log(totalcoin);
+
+var numbers = [100,200,300,400];
+
+var totalcoin = numbers.reduce(function(total, number){
+    return total + number;
+});
+
+console.log(totalcoin);
+
+
+var deptArrray = [1,2,[3,4], 5,6,[7,8,9]];
+var flatArray = deptArrray.reduce(function(flatOutPut, deptItem){
+    return flatOutPut.concat(deptItem);
+},[]);
+
+console.log(flatArray);
+
+var topics = [
+    {
+        topic: "Frontend",
+        courses: [
+            {
+                id: 1,
+                title: "HTML, CSS"
+            },
+            {
+                id: 2,
+                title: "JavaScript"
+            }
+        ]
+    },
+    {
+        topic: "Bachend",
+        courses: [
+            {
+                id: 1,
+                title: "Nodejs"
+            },
+            {
+                id: 2,
+                title: "JavaScript"
+            }
+        ]
+    }
+]
+
+var newCourses = topics.reduce(function(course, topic){
+    return course.concat(topic.courses);
+},[])
+
+console.log(newCourses);
