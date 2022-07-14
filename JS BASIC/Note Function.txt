@@ -1,0 +1,159 @@
+1. Some :
+    Nó sẽ trả về true nếu có ít nhất một 
+    phần tử khớp với test và ngược lại trì trả về false.
+
+    const myAwesomeArray = ["a", "b", "c", "d", "e"]
+    myAwesomeArray.some(test => test === "d")
+    //-------> Kết quả : true
+
+2. Reduce
+    Có nghĩa là, nó lặp qua các giá trị trong mảng đã 
+    cho và áp dụng hàm, sau đó lưu vào đối số đầu tiên (bộ tích lũy).
+    Nếu không có giá trị ban đầu thì lần đầu tiên nó sẽ lấy phần tử thứ 
+    nhất và phần tử thứ hai của mảng
+
+    const myAwesomeArray = [1, 2, 3, 4, 5]
+    myAwesomeArray.reduce((total, value) => total * value)
+    // 1 * 2 * 3 * 4 * 5
+    //-------> Kết quả = 120
+
+3. Every
+    Nó sẽ trả về true nếu mỗi phần tử của mảng khớp với test và 
+    ngược lại (chỉ cần 1 phần tử của mảng không khớp) nó sẽ trả về false.
+
+4. Map
+    Phương thức map() này nhận một hàm làm tham số. Và trả về một mảng mới 
+    có chứa một hình ảnh của từng thành phần của mảng.
+    Phương thức map() Không thay đổi mảng ban đầu
+
+5. Flat
+    Phương thức flat() này thường được sử dụng để tạo ra một mảng mới 
+    chứa các phần tử trong mảng (mà có chứa mảng con)
+
+    const myAwesomeArray = [[1, 2], [3, [4, 6]], 5]
+    myAwesomeArray.flat()
+    //-------> Kết quả : [1, 2, 3, [4, 6], 5]
+
+6. Filter
+    Phương thức filter() này nhận một hàm làm tham số. 
+    Hàm này sẽ thực hiện lọc lần lượt các phần tử của mảng, 
+    nếu true nó sẽ nhét chúng vào một mảng mới.
+
+    const myAwesomeArray = [
+        { id: 1, name: "Hải" },
+        { id: 2, name: "Doanh" },
+        { id: 3, name: "Việt" },
+        { id: 4, name: "Doanh" },
+    ]
+    myAwesomeArray.filter(element => element.name === "Doanh")
+    //-------> Kết quả : 0:{id: 2, name: "Doanh"},
+    //                   1:{id: 4, name: "Doanh"}
+
+7. ForEach 
+    Phương thức forEach() này áp dụng một hàm cho từng phần tử của mảng.
+    const myAwesomeArray = [
+        { id: 1, name: "Hải" },
+        { id: 2, name: "Doanh" },
+        { id: 3, name: "Việt" },
+    ]
+
+    myAwesomeArray.forEach(element => console.log(element.name))
+    //-------> Kết quả : Hải
+    //                   Doanh
+    //                   Việt
+
+8. findIndex
+    Phương thức findIndex() này nhận một hàm làm tham số và 
+    sẽ áp dụng nó cho mảng.
+    Nó trả về chỉ mục của một phần tử được tìm thấy và thỏa
+    mãn hàm kiểm tra được truyền dưới dạng đối số hoặc trả 
+    về -1 nếu không thỏa mãn nó
+
+    const myAwesomeArray = [
+        { id: 1, name: "Hải" },
+        { id: 2, name: "Doanh" },
+        { id: 3, name: "Việt" },
+    ]
+    myAwesomeArray.findIndex(element => element.id === 3)
+    //-------> Kết quả : 2
+    myAwesomeArray.findIndex(element => element.id === 7)
+    //-------> Kết quả : -1
+
+9. FInd 
+    Phương thức find() này nhận một hàm làm đối số và sẽ 
+    áp dụng nó cho mảng.
+    Nó trả về giá trị của một phần tử được tìm thấy trong 
+    mảng và thỏa mãn hàm kiểm tra. Nếu không, nó trả về undefined.
+
+    const myAwesomeArray = [
+        { id: 1, name: "Hải" },
+        { id: 2, name: "Doanh" },
+        { id: 3, name: "Việt" },
+    ]
+
+    myAwesomeArray.find(element => element.id === 3)
+    //-------> Kết quả : {id: 3, name: "Việt"}
+    myAwesomeArray.find(element => element.id === 7)
+    //-------> Kết quả : undefined
+
+10. Sort
+    Phương thức sort() này nhận được một hàm như một số.
+    Nó sắp xếp các phần tử của một mảng, và trả nó về.
+
+    const myAwesomeArray = [5, 4, 3, 2, 1]
+
+    myAwesomeArray.sort((a, b) => a - b)
+    //-------> Kết quả : [1, 2, 3, 4, 5]
+
+    myAwesomeArray.sort((a, b) => b - a)
+    //-------> Kết quả : [5, 4, 3, 2, 1]
+
+11. Concat
+    Phương thức concat() này sẽ hợp nhất hai hoặc nhiều 
+    mảng / giá trị bằng cách ghép nó. Nó trả về một mảng mới.
+
+    const myAwesomeArray1 = [1, 2, 3, 4, 5]
+    const myAwesomeArray2 = [10, 20, 30, 40, 50]
+    myAwesomeArray1.concat(myAwesomeArray2)
+    //-------> Kết quả : [1, 2, 3, 4, 5, 10, 20, 30, 40, 50]
+
+12. Fill
+    Phương thức fill() này điền vào tất cả các phần tử của một 
+    mảng nhất định có cùng giá trị, từ chỉ mục bắt đầu 
+    (mặc định 0) đến chỉ mục kết thúc (mặc định array.length)
+
+    const myAwesomeArray = [1, 2, 3, 4, 5]
+    // Đối số đầu tiên (0) là giá trị
+    // Đối số thứ hai (1) là chỉ mục bắt đầu
+    // Đối số thứ ba (3) là chỉ mục kết thúc (không bao gồm)
+    myAwesomeArray.fill(0, 1, 3)
+    //-------> Kết quả : [1, 0, 0, 4, 5]
+
+13. Includes
+    Phương thức includes() này sẽ trả về true nếu mảng chứa 
+    một phần tử nhất định và false nếu không.
+
+    const myAwesomeArray = [1, 2, 3, 4, 5]
+    myAwesomeArray.includes(3)
+    //-------> Kết quả : true
+    myAwesomeArray.includes(8)
+    //-------> Kết quả : false
+
+14. Reverse
+    Phương thức reverse() này đảo ngược một mảng.
+
+15. Flatmap
+    Phương thức flatMap() áp dụng một hàm cho từng phần 
+    tử của mảng và sau đó làm phẳng kết quả thành một mảng. 
+    Nó là kết hợp của hai phương thức flat() và map().
+
+    const myAwesomeArray = [[1], [2], [3], [4], [5]]
+    myAwesomeArray.flatMap(arr => arr * 10)
+    //-------> Kết quả : [10, 20, 30, 40, 50]
+    // Sử dụng .flat() và .map()
+    myAwesomeArray.flat().map(arr => arr * 10)
+    //-------> Kết quả : [10, 20, 30, 40, 50]
+
+
+
+
